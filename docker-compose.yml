@@ -1,11 +1,13 @@
 version: '3'
 services:
   reserva:
-    image: hotel:1.0
+    build: .
     expose:
       - "80"
+    volumes:
+      - ./app:/var/www/html
     environment:
-      - HOST_NAME=gp1f5a14.fjeclot.net
+      - HOST_NAME=gp1f5a14
   lb:
     image: nginx:latest
     volumes:
